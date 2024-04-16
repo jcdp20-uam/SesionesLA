@@ -9,7 +9,7 @@ Un estudante aprueba si su nota es mayor o igual a
 
 int calFinalSc(int score, int exam);
 
-int valFinalSc(int score);
+void valFinalSc(int score);
 
 void pedirNotas();
 
@@ -29,4 +29,16 @@ void pedirNotas(){
     printf("Dime la nota del examen: ");
     scanf("%d", &examen);
     notaFinal = calFinalSc(acumulado, examen);
+    printf("Nota final %d\n", notaFinal);
+    valFinalSc(notaFinal);
+}
+
+int calFinalSc(int score, int exam){
+    return score + exam;
+}
+
+
+void valFinalSc(int score){
+    if(score >= 70) printf("Aprobado");
+    else printf("Reprobado :(");
 }
